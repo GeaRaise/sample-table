@@ -1,7 +1,7 @@
 import { faEnvelope, faHouse, faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import styles from "@/app/styles.module.scss"
+import styles from "@/app/styles.module.scss";
 
 const MENU_LIST = [
   { name: "メニュー1", icon: faHouse },
@@ -61,9 +61,13 @@ export default function Home() {
         <div className="flex justify-between gap-[40px] items-center">
           <h2 className="text-3xl">sample</h2>
           <label className={styles.checkboxWrapper}>
-            <input type="checkbox" name="sample" className={styles.checkbox} defaultChecked />
-            <span className={styles.arrow}>
-            </span>
+            <input
+              type="checkbox"
+              name="sample"
+              className={styles.checkbox}
+              defaultChecked
+            />
+            <span className={styles.arrow}></span>
           </label>
         </div>
         <ul className="flex flex-col gap-5">
@@ -79,17 +83,17 @@ export default function Home() {
         </ul>
       </div>
       <div
-        className={`mt-10 transition-[margin-left] duration-500 ease-in-out overflow-x-auto mr-[40px] displayScroll ${styles.mainContents}`}
+        className={`mt-10 transition-[margin-left] duration-500 ease-in-out mr-[40px] displayScroll ${styles.mainContents}`}
       >
-        <table className="min-w-[400px]">
+        <table className="w-[100%]">
           <thead className="border border-solid border-black">
             <tr className="[&>th]:border-r [&>th]:border-solid [&>th]:border-black">
-              <th className="min-w-[200px]">顧問先No.</th>
-              <th className="min-w-[200px]">顧問先会社名</th>
-              <th className="min-w-[200px]">顧問先担当者名</th>
-              <th className="min-w-[200px]">登録メールアドレス</th>
-              <th className="min-w-[200px]">ステータス</th>
-              <th className="min-w-[200px]"></th>
+              <th>顧問先No.</th>
+              <th>顧問先会社名</th>
+              <th>顧問先担当者名</th>
+              <th>登録メールアドレス</th>
+              <th>ステータス</th>
+              <th></th>
             </tr>
           </thead>
           <tbody className="text-center">
@@ -100,12 +104,12 @@ export default function Home() {
                   index % 2 === 0 && "bg-cyan-200"
                 }`}
               >
-                <td className="min-w-[200px]">{index + 1}</td>
-                <td className="min-w-[200px]">{item.companyName}</td>
-                <td className="min-w-[200px]">{item.userName}</td>
-                <td className="min-w-[200px]">{item.email}</td>
-                <td className="min-w-[200px]">登録済み</td>
-                <td className="min-w-[200px]">
+                <td>{index + 1}</td>
+                <td>{item.companyName}</td>
+                <td>{item.userName}</td>
+                <td>{item.email}</td>
+                <td>登録済み</td>
+                <td>
                   <button>詳細情報</button>
                 </td>
               </tr>

@@ -1,0 +1,65 @@
+.sidebar {
+  left: 0;
+
+  &:has(.checkbox:checked) {
+      left: -140px;
+
+      ~ .mainContents {
+        margin-left: 76px;
+      }
+  }
+
+  ~ .mainContents {
+    margin-left: 216px;
+  }
+
+  .icon {
+    width: 20px;
+  }
+
+  .checkboxWrapper {
+    position: relative;
+
+    .checkbox {
+      display: none;
+
+      &:checked {
+        ~ .arrow {
+          &::before {
+            top: 50%;
+            left: 1em;
+            transform: rotate(135deg);
+          }
+        }
+      }
+    }
+
+    .arrow {
+      display: inline-block;
+      cursor: pointer;
+      position: relative;
+      vertical-align: middle;
+      color: #333;
+      line-height: 1;
+      position: relative;
+      width: 1em;
+      height: 0.1em;
+      background: #333;
+
+      &::before {
+        content: '';
+        width: 0.65em;
+        height: 0.65em;
+        border: 0.1em solid #333;
+        position: absolute;
+        box-sizing: border-box;
+        border-right: 0;
+        border-bottom: 0;
+        transform: rotate(-45deg);
+        transform-origin: top left;
+        top: 50%;
+        left: -0.05em;
+      }
+    }
+  }
+}
